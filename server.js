@@ -1,9 +1,27 @@
 import express from 'express';
 import userRouter from './routes/users.js';
 const app = express();
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+// Fetching Env variables from .env
+dotenv.config();
 
 //port
 const PORT = process.env.PORT || 3000;
+const DB_Url = process.env.Mongo_db_url;
+
+//listener
+
+app.listen(PORT, () => {
+  console.log('Listening to the port on' + ' ' + PORT);
+});
+
+// db connection
+mongoose.connect(DB_Url, {useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology: true})
+  .then(() => console.log('successfully connected to database.'))
+  .catch(err => console.log('connection to the database unsuccessful.'));
+
 
 //get route
 app.get('/', (req, res) => {
@@ -12,8 +30,4 @@ app.get('/', (req, res) => {
 
 app.use('/users', userRouter);
 
-//listener
 
-app.listen(PORT, () => {
-  console.log('Bipin is gay');
-});
