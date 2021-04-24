@@ -4,15 +4,12 @@ const app = express();
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-// Fetching Env variables from .env
+// Fetch Env variables from .env
 dotenv.config();
-
-//port
 const PORT = process.env.PORT || 3000;
 const DB_Url = process.env.Mongo_db_url;
 
-//listener
-
+//port listener
 app.listen(PORT, () => {
   console.log('Listening to the port on' + ' ' + PORT);
 });
