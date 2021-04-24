@@ -1,5 +1,6 @@
 import express from 'express';
 import userRouter from './routes/users.js';
+import userLogout from './routes/userLogout.js';
 const app = express();
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -27,4 +28,5 @@ app.get('/', (req, res) => {
 
 app.use('/users', userRouter);
 
+app.use('/users/logout', userLogout);
 
