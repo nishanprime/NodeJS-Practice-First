@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is the first day - Apr 23, 2021",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "node server.js"
   },
