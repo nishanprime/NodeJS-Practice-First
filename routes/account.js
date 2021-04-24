@@ -1,7 +1,9 @@
 import express from 'express';
+
 const router = express.Router();
+
 router.get('/', (req, res) => {
-  res.send('This is get route of users');
+  res.send('Someone called /users/account get method');
 });
-router.post('/');
+
 export default router;
