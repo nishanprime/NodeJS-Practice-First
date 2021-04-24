@@ -1,5 +1,5 @@
 import express from 'express';
-
+import userRouter from './routes/users.js';
 const app = express();
 
 //port
@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send('Bipin is very good');
 });
+
+app.use('/users', userRouter);
 
 //listener
 
